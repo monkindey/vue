@@ -4,15 +4,13 @@ You can join them in supporting  Vue.js development by [pledging on Patreon](htt
 
 ### $2000
 
-[Currently vacant. It could be you!](https://www.patreon.com/bePatron?u=2341390&patAmt=2000.0&exp=1&rid=473784)
+<a href="http://www.thedifferenceengine.io/">
+  <img width="600px" src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/themes/vue/source/images/tde.png">
+</a>
 
 ---
 
 ### $500
-
-<a href="http://www.itunescn.com/">
-  <img width="240px" src="https://www.zymmm.com/content/images/2016/05/itunescn-logo-4.png">
-</a>
 
 <a href="https://jsfiddle.net/">
   <img width="240px" src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/themes/vue/source/images/jsfiddle.png">
@@ -46,6 +44,14 @@ You can join them in supporting  Vue.js development by [pledging on Patreon](htt
   <img width="240px" src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/themes/vue/source/images/trisoft.png">
 </a>
 
+<a href="https://www.2mhost.com/" target="_blank">
+  <img width="240px" src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/themes/vue/source/images/2mhost.png">
+</a>
+
+<a href="https://vuejsjob.com/?ref=vuejs" target="_blank">
+  <img width="240px" src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/themes/vue/source/images/vuejobs.png">
+</a>
+
 ---
 
 ### $250
@@ -57,25 +63,26 @@ It could be you!
 ### $100
 
 <a href="http://tighten.co/">
-  <img width="200px" src="http://i.imgur.com/T7fQYLT.png">
+  <img width="240px" src="http://i.imgur.com/T7fQYLT.png">
 </a>
 
 <a href="http://invoicemachine.com/">
-  <img width="200px" src="http://assets.invoicemachine.com/images/flat_logo.png">
+  <img width="220px" src="http://assets.invoicemachine.com/images/flat_logo.png">
 </a>
 
 <a href="https://statamic.com/">
   <img width="240px" src="http://i.imgur.com/MRIkKgp.png">
 </a>
 
-<a href="http://nodividestudio.com/">
-  <img width="100px" src="https://cloud.githubusercontent.com/assets/499550/16464256/552c2306-3e07-11e6-867f-e4f5ac64bace.png"> No Divide Studio
+<a href="https://alligator.io">
+  <img width="240px" src="https://alligator.io/images/alligator-logo.svg">
 </a>
 
 ---
 
 ### $50+
 
+- No Divide Studio
 - James Kyle
 - Blake Newman
 - Lee Smith
@@ -83,7 +90,8 @@ It could be you!
 - Greg McCarvell
 - Yoshiya Hinosawa
 - Wasim Khamlichi
-- Jivan Roquet
+- errorrik
+- Alex Balashov
 
 ---
 
@@ -141,7 +149,8 @@ It could be you!
 - Nikola Trifunovic
 - Nicolas Mutis Mesa
 - Fahed Toumi
-- James
+- James Brooks
+- Kirk Lewis
 - Spenser
 - Takuya Nishio
 - Daniel Diekmeier
@@ -165,3 +174,37 @@ It could be you!
 - Paul Straw
 - Jake Ingman
 - Eduardo Camillo
+- Barbara Liau
+- Jens Lind
+- Yegor Sytnyk
+- Benson Wong
+- Anthony Tsui
+- Karol Fabjanczuk
+- Isaac Sant
+- Milos Stojanovic
+- Matsumoto Takamasa
+- Douglas Lowder
+- Bess Brooks
+- Christian Griffith
+- Matt Rockwell
+- Jarek Tkaczyk
+- Michael Laccetti
+- Jonothan Allen
+- Andrew Davis
+- Jason Rys
+- Sean
+- Xiaojie Li
+- Joakim Bugge
+- Lacey Pevey
+- David Hess
+- Niannian Modisette
+- Kim Cuartero
+- Luke Sampson
+- Dariusz Jastrzębski
+- Ivan Sieder
+- Jivan Roquet
+- Shane
+- Stew Heckenberg
+- Matt Jones
+- Dave Chenell
+- Frank Baele

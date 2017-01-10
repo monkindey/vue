@@ -13,6 +13,20 @@ class Test extends Vue {
     this.$isServer;
   }
 
+  // test property reification
+  $refs: {
+    vue: Vue,
+    element: HTMLInputElement,
+    vues: Vue[],
+    elements: HTMLInputElement[]
+  }
+  testReification() {
+    this.$refs.vue.$data;
+    this.$refs.element.value;
+    this.$refs.vues[0].$data;
+    this.$refs.elements[0].value;
+  }
+
   testMethods() {
     this.$mount("#app", false);
     this.$forceUpdate();
@@ -31,7 +45,8 @@ class Test extends Vue {
     this.$nextTick(function() {
       this.$nextTick;
     });
-    this.$createElement("div", {}, "message", "");
+    this.$nextTick().then(() => {});
+    this.$createElement("div", {}, "message");
   }
 
   static testConfig() {
@@ -57,12 +72,14 @@ class Test extends Vue {
       }
     });
     this.nextTick(() => {});
+    this.nextTick().then(() => {});
     this.set({}, "", "");
     this.set([true, false, true], 1, true);
     this.delete({}, "");
     this.directive("", {bind() {}});
     this.filter("", (value: number) => value);
     this.component("", { data: () => ({}) });
+    this.component("", { functional: true });
     this.use;
     this.mixin(Test);
     this.compile("<div>{{ message }}</div>");

@@ -14,19 +14,17 @@ type PropOptions = {
 export function validateProp (
   key: string,
   propOptions: Object,
-  propsData: ?Object,
+  propsData: Object,
   vm?: Component
 ): any {
-  /* istanbul ignore if */
-  if (!propsData) return
   const prop = propOptions[key]
   const absent = !hasOwn(propsData, key)
   let value = propsData[key]
   // handle boolean props
-  if (getType(prop.type) === 'Boolean') {
+  if (isType(Boolean, prop.type)) {
     if (absent && !hasOwn(prop, 'default')) {
       value = false
-    } else if (value === '' || value === hyphenate(key)) {
+    } else if (!isType(String, prop.type) && (value === '' || value === hyphenate(key))) {
       value = true
     }
   }
@@ -49,7 +47,7 @@ export function validateProp (
 /**
  * Get the default value of a prop.
  */
-function getPropDefaultValue (vm: ?Component, prop: PropOptions, name: string): any {
+function getPropDefaultValue (vm: ?Component, prop: PropOptions, key: string): any {
   // no default, return undefined
   if (!hasOwn(prop, 'default')) {
     return undefined
@@ -58,11 +56,18 @@ function getPropDefaultValue (vm: ?Component, prop: PropOptions, name: string): 
   // warn against non-factory defaults for Object & Array
   if (isObject(def)) {
     process.env.NODE_ENV !== 'production' && warn(
-      'Invalid default value for prop "' + name + '": ' +
+      'Invalid default value for prop "' + key + '": ' +
       'Props with type Object/Array must use a factory function ' +
       'to return the default value.',
       vm
     )
+  }
+  // the raw prop value was also undefined from previous render,
+  // return previous default value to avoid unnecessary watcher trigger
+  if (vm && vm.$options.propsData &&
+    vm.$options.propsData[key] === undefined &&
+    vm[key] !== undefined) {
+    return vm[key]
   }
   // call factory function for non-Function types
   return typeof def === 'function' && prop.type !== Function
@@ -99,7 +104,7 @@ function assertProp (
     }
     for (let i = 0; i < type.length && !valid; i++) {
       const assertedType = assertType(value, type[i])
-      expectedTypes.push(assertedType.expectedType)
+      expectedTypes.push(assertedType.expectedType || '')
       valid = assertedType.valid
     }
   }
@@ -128,7 +133,7 @@ function assertProp (
  */
 function assertType (value: any, type: Function): {
   valid: boolean,
-  expectedType: string
+  expectedType: ?string
 } {
   let valid
   let expectedType = getType(type)
@@ -161,4 +166,17 @@ function assertType (value: any, type: Function): {
 function getType (fn) {
   const match = fn && fn.toString().match(/^\s*function (\w+)/)
   return match && match[1]
+}
+
+function isType (type, fn) {
+  if (!Array.isArray(fn)) {
+    return getType(fn) === getType(type)
+  }
+  for (let i = 0, len = fn.length; i < len; i++) {
+    if (getType(fn[i]) === getType(type)) {
+      return true
+    }
+  }
+  /* istanbul ignore next */
+  return false
 }

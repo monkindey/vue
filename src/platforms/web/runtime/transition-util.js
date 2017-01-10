@@ -1,7 +1,6 @@
 /* @flow */
 
-import { inBrowser } from 'core/util/index'
-import { isIE9 } from 'web/util/index'
+import { inBrowser, isIE9 } from 'core/util/index'
 import { remove } from 'shared/util'
 import { addClass, removeClass } from './class-util'
 
@@ -132,6 +131,11 @@ export function getTransitionInfo (el: Element, expectedType?: ?string): {
 }
 
 function getTimeout (delays: Array<string>, durations: Array<string>): number {
+  /* istanbul ignore next */
+  while (delays.length < durations.length) {
+    delays = delays.concat(delays)
+  }
+
   return Math.max.apply(null, durations.map((d, i) => {
     return toMs(d) + toMs(delays[i])
   }))
